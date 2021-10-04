@@ -9,20 +9,21 @@ vagrant plugin install vagrant-vbguest
 # Cloning magma repo:
 # git clone -b v1.5 https://github.com/magma/magma --depth 1
 
-# wget https://github.com/magma/magma/archive/refs/tags/v1.5.3.zip
-# unzip v1.5.3.zip
-# MAGMA_ROOT=${PWD}/magma-1.5.3
-MAGMA_ROOT=${PWD}/magma
+wget https://github.com/magma/magma/archive/refs/tags/v1.5.3.zip
+unzip v1.5.3.zip
+MAGMA_ROOT=${PWD}/magma-1.5.3
 
-cd ${MAGMA_ROOT}/lte/gateway/c/oai/tasks/mme_app/
+# MAGMA_ROOT=${PWD}/magma
 
-rm mme_app_bearer.c
-rm mme_app_sgs_detach.c
-rm mme_app_sgsap_location_update.c
+# cd ${MAGMA_ROOT}/lte/gateway/c/oai/tasks/mme_app/
 
-wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_bearer.c
-wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_sgs_detach.c
-wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_sgsap_location_update.c
+# rm mme_app_bearer.c
+# rm mme_app_sgs_detach.c
+# rm mme_app_sgsap_location_update.c
+
+# wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_bearer.c
+# wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_sgs_detach.c
+# wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_sgsap_location_update.c
 
 cd ${MAGMA_ROOT}/lte/gateway
 
