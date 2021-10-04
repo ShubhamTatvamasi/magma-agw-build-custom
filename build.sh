@@ -7,11 +7,12 @@ pip3 install ansible fabric3 jsonpickle requests PyYAML
 vagrant plugin install vagrant-vbguest
 
 # Cloning magma repo:
-# git clone -b fix_timer_exp_handler_returns https://github.com/ulaskozat/magma --depth 1
+# git clone -b v1.5 https://github.com/magma/magma --depth 1
 
-wget https://github.com/magma/magma/archive/refs/tags/v1.5.3.zip
-unzip v1.5.3.zip
-MAGMA_ROOT=${PWD}/magma-1.5.3
+# wget https://github.com/magma/magma/archive/refs/tags/v1.5.3.zip
+# unzip v1.5.3.zip
+# MAGMA_ROOT=${PWD}/magma-1.5.3
+MAGMA_ROOT=${PWD}/magma
 
 cd ${MAGMA_ROOT}/lte/gateway/c/oai/tasks/mme_app/
 
