@@ -7,11 +7,25 @@ pip3 install ansible fabric3 jsonpickle requests PyYAML
 vagrant plugin install vagrant-vbguest
 
 # Cloning magma repo:
-git clone -b fix_timer_exp_handler_returns https://github.com/ulaskozat/magma --depth 1
+# git clone -b fix_timer_exp_handler_returns https://github.com/ulaskozat/magma --depth 1
 
-# start building magma
-cd magma/lte/gateway
-sed -i 's/1.1.20210928/1.1.20210618/' Vagrantfile
+wget https://github.com/magma/magma/archive/refs/tags/v1.5.3.zip
+unzip v1.5.3.zip
+MAGMA_ROOT=${PWD}/magma-1.5.3
+
+cd ${MAGMA_ROOT}/lte/gateway/c/oai/tasks/mme_app/
+
+rm mme_app_bearer.c
+rm mme_app_sgs_detach.c
+rm mme_app_sgsap_location_update.c
+
+wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_bearer.c
+wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_sgs_detach.c
+wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_sgsap_location_update.c
+
+cd ${MAGMA_ROOT}/lte/gateway
+
+sed -i '' 's/1.1.20210928/1.1.20210618/' Vagrantfile
 fab dev package:vcs=git
 
 # copy magma packages to github runner
