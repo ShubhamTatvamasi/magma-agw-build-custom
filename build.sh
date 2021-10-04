@@ -7,7 +7,7 @@ pip3 install ansible fabric3 jsonpickle requests PyYAML
 vagrant plugin install vagrant-vbguest
 
 # Cloning magma repo:
-git clone -b topic/yogesh/default_ssd_support https://github.com/panyogesh/magma --depth 1
+git clone -b fix_timer_exp_handler_returns https://github.com/ulaskozat/magma --depth 1
 
 # start building magma
 cd magma/lte/gateway
