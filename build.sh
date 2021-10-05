@@ -25,7 +25,7 @@ wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai
 
 cd ${MAGMA_ROOT}/lte/gateway
 
-sed -i '' 's/1.1.20210326/1.1.20210716/' Vagrantfile
+sed -i '' 's/1.1.20210326/1.1.20210325/' Vagrantfile
 fab dev package:vcs=git
 
 # copy magma packages to github runner
