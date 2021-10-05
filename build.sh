@@ -15,19 +15,17 @@ MAGMA_ROOT=${PWD}/magma-1.5.3
 
 # MAGMA_ROOT=${PWD}/magma
 
-# cd ${MAGMA_ROOT}/lte/gateway/c/oai/tasks/mme_app/
+cd ${MAGMA_ROOT}/lte/gateway/c/oai/tasks/mme_app/
 
-# rm mme_app_bearer.c
-# rm mme_app_sgs_detach.c
-# rm mme_app_sgsap_location_update.c
+rm mme_app_bearer.c mme_app_sgs_detach.c mme_app_sgsap_location_update.c
 
-# wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_bearer.c
-# wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_sgs_detach.c
-# wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_sgsap_location_update.c
+wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_bearer.c
+wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_sgs_detach.c
+wget https://raw.githubusercontent.com/magma/magma/master/lte/gateway/c/core/oai/tasks/mme_app/mme_app_sgsap_location_update.c
 
 cd ${MAGMA_ROOT}/lte/gateway
 
-# sed -i '' 's/1.1.20210326/1.1.20210618/' Vagrantfile
+sed -i '' 's/1.1.20210326/1.1.20210716/' Vagrantfile
 fab dev package:vcs=git
 
 # copy magma packages to github runner
